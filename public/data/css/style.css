@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.main-search, .top-heading .top-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#myVideo {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 9;
+}
+
+.overlay {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+
+.main-search {
+  width: 70%;
+  z-index: 100;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px #666;
+          box-shadow: 0 0 5px #666;
+}
+
+.main-search input, .main-search button {
+  float: left;
+  border: none;
+  height: 50px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.main-search input {
+  padding: 10px 20px;
+  width: calc(100% - 50px) !important;
+  color: #333333;
+  letter-spacing: .5px;
+  font-weight: 600;
+}
+
+.main-search input::-webkit-input-placeholder {
+  color: #666;
+}
+
+.main-search input:-ms-input-placeholder {
+  color: #666;
+}
+
+.main-search input::-ms-input-placeholder {
+  color: #666;
+}
+
+.main-search input::placeholder {
+  color: #666;
+}
+
+.main-search button {
+  width: 50px;
+  border-left: 1px solid #555;
+  color: #333333;
+}
+
+.mainnavbar-brand, .mainnavbar .nav-link {
+  color: #fff;
+  letter-spacing: .5px;
+  font-weight: bold;
+}
+
+.mainnavbar-brand:hover, .mainnavbar .nav-link:hover {
+  color: #69daed;
+}
+
+.top-heading {
+  position: relative;
+  background: #ddd;
+  height: 70px;
+  width: 100%;
+}
+
+.top-heading .top-link {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+
+.top-heading .top-link span {
+  position: relative;
+  top: 3px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.mainMovies {
+  background-color: #ddd;
+}
+
+.mainMovies #animes .owl-item {
+  padding: 10px;
+}
+
+.mainMovies #animes .owl-item .card-text {
+  margin-top: 10px;
+  font-size: 11px;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mainMovies #animes .owl-nav div {
+  background: #668bec;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.mainMovies #animes .owl-nav div:hover {
+  background: #fff;
+  color: #668bec;
+}
+
+.mainMovies .card {
+  margin: 5px 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.mainMovies .card:hover {
+  -webkit-box-shadow: 0 0 10px #668bec;
+          box-shadow: 0 0 10px #668bec;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.mainMovies .card-body {
+  color: #333;
+  padding: .8em;
+}
+
+.mainMovies .card-title:hover {
+  color: #668bec;
+}
+
+.mainMovies .card-text {
+  margin-top: 10px;
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mainMovies .movies-info, .mainMovies .movies-director, .mainMovies .actors {
+  font-size: 11px;
+  margin: 5px 0;
+}
+
+#movies, #series, #animes {
+  padding: 65px 30px;
+  height: 100vh;
+}
+
+.owl-nav:last-child {
+  display: none;
+}
+
+.movie-item img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movie-item .video {
+  height: 400px;
+  width: 100%;
+}
+
+.movie-item .sidenav .nav-item {
+  padding: 5px 0;
+}
+
+.movie-item textarea {
+  resize: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #movies, #series, #animes {
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

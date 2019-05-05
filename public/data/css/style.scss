@@ -1,0 +1,233 @@
+$mainColor: #69daed;
+$secondry: #668bec;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body{
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+%horizontalCentered{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+%centered{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+%verticalCentered{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#myVideo{
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(255,255,255,0.5));
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 9;
+}
+
+.overlay{
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(255,255,255,0.5));
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+
+.main{
+  // width: 100%;
+  // height: 100vh;
+  // background: linear-gradient(rgba(0,0,0,0.5),rgba(255,255,255,0.5)), url(../img/main_bg.jpg);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  &-search{
+    width: 70%;
+    @extend %centered;
+    z-index: 100;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #666;
+    %shareStyle{
+      float: left;
+      border:none;
+      height: 50px;
+      outline: none;
+      background: rgba($color: #fff, $alpha: .7);
+    }
+    input{
+      padding: 10px 20px;
+      @extend %shareStyle;
+      width: calc(100% - 50px)!important;
+      color: #333333;
+      letter-spacing: .5px;
+      font-weight: 600;
+      &::placeholder{
+        color: #666;
+      }
+    }
+    button{
+      width: 50px;
+      @extend %shareStyle;
+      border-left: 1px solid #555;
+      color: #333333;
+    }
+  }
+}
+
+.mainnavbar{
+  &-brand,.nav-link{
+    color: #fff;
+    letter-spacing: .5px;
+    font-weight: bold;
+    &:hover{
+      color: $mainColor;
+    }
+  }
+  
+}
+
+.top-heading{
+  position: relative;
+  background: #ddd;
+  height: 70px;
+  width: 100%;
+  .top-link{
+    width: max-content;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    @extend %centered;
+    span{
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+a{
+  text-decoration: none!important;
+}
+
+.mainMovies{
+  #animes{
+    .owl-item{
+      padding: 10px 0;
+      .card-text{
+        margin-top: 10px;
+        font-size: 11px;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+      }
+    }
+    .owl-nav{
+      div{
+        background: $secondry;
+        transition: all .3s;
+        &:hover{
+          background: #fff;
+          color: $secondry;
+        }
+      }
+    }
+  }
+  background-color: #ddd;
+  .card{
+    margin: 5px 0;
+    transition: all .3s;
+    &:hover{
+      box-shadow: 0 0 10px $secondry;
+      transform: scale(1.05);
+    }
+  }
+  .card-body{
+    color: #333;
+    padding: .8em;
+  }
+  .card-title{
+    &:hover{
+      color: $secondry;
+    }
+  }
+  .card-text{
+    margin-top: 10px;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+  .movies-info,.movies-director,.actors{
+    font-size: 11px;
+    margin: 5px 0;
+  }
+}
+#movies, #series, #animes{
+  padding: 65px 30px;
+  height: 100vh;
+}
+
+.owl-nav:last-child{
+  display: none;
+}
+
+.movie-item{
+  img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    align-items: center;
+  }
+  .video{
+    height: 400px;
+    width: 100%;
+  }
+  .sidenav{
+    .nav-item{
+      padding: 5px 0;
+    }
+  }
+  textarea{
+    resize: none;
+  }
+}
+
+// mixin media queries functions
+@mixin mediaMaxWidthWithoutOrient($mediaMaxWidth) {
+  @media only screen and (max-width: $mediaMaxWidth){
+    @content;
+  }
+}
+@mixin mediaMaxWidth($mediaMaxWidth, $orientation) {
+  @media only screen and (max-width: $mediaMaxWidth) and (orientation: $orientation) {
+    @content;
+  }
+}
+
+@mixin mediaMinWidth($mediaMinWidth, $orientation) {
+  @media only screen and (min-width: $mediaMinWidth) and (orientation: $orientation) {
+    @content;
+  }
+}
+
+@include mediaMaxWidthWithoutOrient(768px){
+  #movies,#series,#animes{
+    height: 100%;
+  }
+}
